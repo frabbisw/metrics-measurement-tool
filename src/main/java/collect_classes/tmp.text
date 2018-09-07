@@ -1,0 +1,20 @@
+/*
+System.out.println(n.getType(0).getName());
+for(ImportDeclaration immport : n.getImports())
+{
+    System.out.println(getPackFromImport(immport));
+}
+*/
+
+/*
+        for(String key : packageMap.keySet())
+        {
+            System.out.println("package: "+key);
+            System.out.println("Classes: ");
+            for (ClassOrInterfaceDeclaration classData : packageMap.get(key))
+            {
+                System.out.println(classData);
+                System.out.println();
+            }
+        }
+        */

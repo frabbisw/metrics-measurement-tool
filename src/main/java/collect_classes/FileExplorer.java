@@ -3,7 +3,7 @@ package collect_classes;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;
-import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
+import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
@@ -13,15 +13,17 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class ClassExplorer
+public class FileExplorer
 {
     Map <String, ArrayList<String>> packageMap;
-    Map <String, ArrayList<String>> packMapBySrc;
+    Map <String, ArrayList<String>> sourceMap;
+    ArrayList<CompilationUnit> CUList;
 
-    public ClassExplorer(File rootFile)
+    public FileExplorer(File rootFile)
     {
         packageMap = new TreeMap<>();
-        packMapBySrc = new TreeMap<>();
+        sourceMap = new TreeMap<>();
+        CUList = new ArrayList<>();
 
         browseClasses(rootFile);
     }
@@ -29,8 +31,8 @@ public class ClassExplorer
     {
         return packageMap;
     }
-    public Map<String, ArrayList<String>> getPackMapBySrc() {
-        return packMapBySrc;
+    public Map<String, ArrayList<String>> getSourceMap() {
+        return sourceMap;
     }
 
     public void browseClasses(File rootFile) {
@@ -42,28 +44,17 @@ public class ClassExplorer
                     public void visit(CompilationUnit n, Object arg) {
                         super.visit(n, arg);
 
+                        String packName=null;
                         if(n.getPackageDeclaration().isPresent())
                         {
-                            String pack = n.getPackageDeclaration().get().getNameAsString();
-                            if(!packageMap.containsKey(pack))
-                                packageMap.put(pack, new ArrayList<>());
-
-                            for(TypeDeclaration type : n.getTypes())
-                            {
-                                packageMap.get(pack).add(type.getNameAsString());
-
-                                try {
-                                    String className=n.getClassByName(type.getNameAsString()).get().getNameAsString();
-                                    packageMap.put(pack+"."+className, new ArrayList<>());
-                                    packageMap.get(pack+"."+className).add(type.getNameAsString());
-                                }
-                                catch (Exception e) {}
-                            }
+                            packName=n.getPackageDeclaration().get().getNameAsString();
+                            CUList.add(n);
+                            includeToPackageMap(n);
                         }
-                        if(!packMapBySrc.containsKey(src))
-                            packMapBySrc.put(src, new ArrayList<>());
+                        if(!sourceMap.containsKey(src))
+                            sourceMap.put(src, new ArrayList<>());
                         for(TypeDeclaration type : n.getTypes()) {
-                            packMapBySrc.get(src).add(type.getNameAsString());
+                            sourceMap.get(src).add(type.getNameAsString());
                         }
                     }
                 }.visit(JavaParser.parse(file), null);
@@ -72,22 +63,48 @@ public class ClassExplorer
             }
         }).explore(rootFile);
     }
-    public ArrayList<String>getClassesByImportTag(ImportDeclaration declaration)
+    private void includeToPackageMap(CompilationUnit n) {
+        String packName = n.getPackageDeclaration().get().getNameAsString();
+        if(!packageMap.containsKey(packName))
+            packageMap.put(packName, new ArrayList<>());
+
+        for(TypeDeclaration type : n.getTypes())
+        {
+            packageMap.get(packName).add(type.getNameAsString());
+
+            try {
+                String className=n.getClassByName(type.getNameAsString()).get().getNameAsString();
+                packageMap.put(packName+"."+className, new ArrayList<>());
+                packageMap.get(packName+"."+className).add(type.getNameAsString());
+            }
+            catch (Exception e) {}
+        }
+    }
+    private String getFullName(String packName, String className)
+    {
+        if(packName==null)  return className;
+        return packName+className;
+    }
+    public ArrayList<String> getClassNamesByImportTag(ImportDeclaration declaration)
     {
         if(packageMap.containsKey(declaration.getNameAsString()))
             return packageMap.get(declaration.getNameAsString());
         return null;
     }
-    public ArrayList<String>getClassesBySource(String path)
+    public ArrayList<String> getClassNamesBySource(String path)
     {
-        if(packMapBySrc.containsKey(path))
-            return packMapBySrc.get(path);
+        if(sourceMap.containsKey(path))
+            return sourceMap.get(path);
         return null;
+    }
+    public ArrayList<CompilationUnit>getCUList()
+    {
+        return CUList;
     }
     /*
     public static void main(String[] args) {
         File rootFile = new File("/home/rabbi/bin/samples/effective-java-examples-master");
-        ClassExplorer explorer = new ClassExplorer(rootFile);
+        FileExplorer explorer = new FileExplorer(rootFile);
 
         Map <String, ArrayList<String>> packageMap = explorer.getPackageMap();
         for(String key : packageMap.keySet())

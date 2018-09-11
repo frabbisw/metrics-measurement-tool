@@ -3,16 +3,15 @@ package collect_classes;
 import java.io.File;
 
 public class ClassFinder {
-    static ClassExplorer explorer;
+    static FileExplorer explorer;
     static String projectPath;
     public static void setProjectPath(String path)
     {
         projectPath=path;
+        explorer=new FileExplorer(new File(projectPath));
     }
-    public static ClassExplorer getClassExplorer()
+    public static FileExplorer getClassExplorer()
     {
-        if(explorer==null)
-            explorer=new ClassExplorer(new File(projectPath));
         return explorer;
     }
 }

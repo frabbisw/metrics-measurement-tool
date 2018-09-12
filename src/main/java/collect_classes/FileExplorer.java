@@ -85,10 +85,10 @@ public class FileExplorer
         if(packName==null)  return className;
         return packName+className;
     }
-    public ArrayList<String> getClassNamesByImportTag(ImportDeclaration declaration)
+    public ArrayList<String> getClassNamesByImportTag(String packageName)
     {
-        if(packageMap.containsKey(declaration.getNameAsString()))
-            return packageMap.get(declaration.getNameAsString());
+        if(packageMap.containsKey(packageName))
+            return packageMap.get(packageName);
         return null;
     }
     public ArrayList<String> getClassNamesBySource(String path)

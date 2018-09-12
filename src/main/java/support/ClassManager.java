@@ -8,29 +8,39 @@ import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.body.*;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class ClassManager {
-    ArrayList<String>foreignClasses;
+    Map<String, String> classesMap;
     ArrayList<ClassOrInterfaceDeclaration>localClasses;
-    ArrayList<MethodManager> methodManagers =new ArrayList<>();
+    ArrayList<MethodManager> methodManagers;
+    String myPackageName="Not Declared";
 
     public ClassManager(String ParentPath, CompilationUnit compilationUnit) {
         FileExplorer fileExplorer = ClassFinder.getClassExplorer();
-        foreignClasses = new ArrayList<>();
+        classesMap = new TreeMap<>();
         localClasses=new ArrayList<>();
         methodManagers=new ArrayList<>();
-
+        if(compilationUnit.getPackageDeclaration().isPresent())
+            myPackageName=compilationUnit.getPackageDeclaration().get().getNameAsString();
 
         for (ImportDeclaration immport : compilationUnit.getImports())
         {
-            if(fileExplorer.getClassNamesByImportTag(immport)!=null)
-                foreignClasses.addAll(fileExplorer.getClassNamesByImportTag(immport));
+            String importName=immport.getNameAsString();
+            if(fileExplorer.getClassNamesByImportTag(importName)!=null)
+            {
+                for(String className : fileExplorer.getClassNamesByImportTag(importName))
+                {
+                    if(immport.toString().contains("*"))    classesMap.put(className, importName+"."+className);
+                    else classesMap.put(className, importName);
+                }
+            }
         }
         if(fileExplorer.getClassNamesBySource(ParentPath)!=null)
-            foreignClasses.addAll(fileExplorer.getClassNamesBySource(ParentPath));
+        {
+            for(String className : fileExplorer.getClassNamesBySource(ParentPath))
+                classesMap.put(className, myPackageName+"."+className);
+        }
 
         for(TypeDeclaration type : compilationUnit.getTypes())
             localClasses.add(compilationUnit.getClassByName(type.getNameAsString()).get());
@@ -39,21 +49,22 @@ public class ClassManager {
     {
         for(ClassOrInterfaceDeclaration clazz : localClasses)
         {
+            String classNameWithPackage=myPackageName+"."+clazz.getNameAsString();
             Map<String, String>globalMap = new TreeMap<>();
 
             for (FieldDeclaration field : clazz.getFields())
                 for(VariableDeclarator variable : field.getVariables())
-                    for(String flazz : foreignClasses)
+                    for(String flazz : classesMap.keySet())
                         if(flazz.equals(variable.getType().asString()))
                             globalMap.put(variable.getNameAsString(),variable.getType().asString());
 
-            for(String string : foreignClasses)
+            for(String string : classesMap.keySet())
                 globalMap.put(string, string);
 
             convertAndAddConstructors(clazz, globalMap);
 
             for(MethodDeclaration method : clazz.getMethods())
-                methodManagers.add(new MethodManager(method, globalMap, foreignClasses));
+                methodManagers.add(new MethodManager(method, classNameWithPackage, globalMap, classesMap));
 
             for(MethodManager manager : methodManagers)
                 manager.printCoupling();
@@ -68,7 +79,7 @@ public class ClassManager {
             md.setParameters(cd.getParameters());
             md.setBody(cd.getBody());
 
-            methodManagers.add(new MethodManager(md, globalMap, foreignClasses));
+            methodManagers.add(new MethodManager(md, myPackageName+"."+cd.getNameAsString(), globalMap, classesMap));
         }
     }
 

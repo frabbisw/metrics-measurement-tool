@@ -4,12 +4,13 @@ import com.google.common.base.Strings;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 
 public class Printer {
-    public static void printCouplingFromMethod(String methodName, Map<String, ArrayList<String>> couplingMap)
+    public static void printCouplingFromMethod(String className, String methodName, Map<String, Set<String>> couplingMap)
     {
         System.out.print(Strings.repeat("=", methodName.length())+"\n");
-        System.out.println(methodName);
+        System.out.println(className+" "+methodName);
         System.out.println(Strings.repeat("=", methodName.length()));
 
         for(String classkey : couplingMap.keySet())
@@ -21,10 +22,10 @@ public class Printer {
             System.out.println();
         }
     }
-    public static void printCohessionFromMethod(String methodName, ArrayList<String>cohessinList)
+    public static void printCohesionFromMethod(String methodName, String className, ArrayList<String>cohessinList)
     {
         System.out.print(Strings.repeat("=", methodName.length())+"\n");
-        System.out.println(methodName);
+        System.out.println(className+" "+methodName);
         System.out.println(Strings.repeat("=", methodName.length()));
 
         System.out.print("Dependent Methods inside class: ");

@@ -2,7 +2,6 @@ package support;
 
 import class_metrics.CohesionHandler;
 import class_metrics.CouplingHandler;
-import com.github.javaparser.ast.AccessSpecifier;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.ForeachStmt;
@@ -17,6 +16,7 @@ public class MethodManager {
     CouplingHandler couplingHandler;
     Map<String,String>classesMap;
     Map<String, String> globalMap;
+    Set<String>localVariables;
     String myClassName;
     String methodName="";
 
@@ -26,6 +26,7 @@ public class MethodManager {
         this.classesMap=classesMap;
         this.methodName=method.getNameAsString();
         this.myClassName=myClassName;
+        this.localVariables=new HashSet<>();
 
         localMap = new TreeMap<>();
         couplingHandler=new CouplingHandler(methodName, myClassName);
@@ -39,14 +40,15 @@ public class MethodManager {
         method.accept(new VoidVisitorAdapter<Void>() {
             @Override
             public void visit(VariableDeclarator variable, Void arg) {
+                localVariables.add(variable.getNameAsString());
                 addVariableToLocalMap(variable);
                 super.visit(variable, arg);
             }
             @Override
             public void visit(ForeachStmt forEach , Void arg)
             {
-                if(globalSet.contains(forEach.getIterable().toString()))
-                    cohesionHandler.addVariable(forEach.getIterable().toString());
+                if(globalSet.contains(forEach.getIterable().toString()) & !localVariables.contains(forEach.getIterable().toString()))
+                    cohesionHandler.addGlobalVariable(forEach.getIterable().toString());
                 forEach.accept(new VoidVisitorAdapter<Void>() {
                     @Override
                     public void visit(VariableDeclarator variable, Void arg) {
@@ -65,8 +67,8 @@ public class MethodManager {
 
             @Override
             public void visit(AssignExpr expr, Void arg) {
-                if(globalSet.contains(expr.getTarget().toString()))
-                    cohesionHandler.addVariable(expr.getTarget().toString());
+                if(globalSet.contains(expr.getTarget().toString()) & !localVariables.contains(expr.getTarget().toString()))
+                    cohesionHandler.addGlobalVariable(expr.getTarget().toString());
                 if(expr.isObjectCreationExpr())
                     addConstructorAsMethodCall(expr.asObjectCreationExpr());
                 super.visit(expr, arg);

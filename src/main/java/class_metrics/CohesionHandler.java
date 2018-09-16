@@ -34,7 +34,7 @@ public class CohesionHandler {
         return calledMethods;
     }
 
-    public void addVariable(String v)
+    public void addGlobalVariable(String v)
     {
         globalVariables.add(v);
     }

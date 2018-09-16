@@ -100,20 +100,27 @@ public class ClassManager {
         //System.out.println("\n\n");
 
         cohesionGraph.calculateDSU();
-        //System.out.println(cohesionGraph.getDsu());
+        System.out.println(cohesionGraph.getDsu());
     }
+    public int responseOfClass()
+    {
+        int sum=methodManagers.size();
+        for(MethodManager manager:methodManagers)
+            sum+=manager.getCouplingHandler().getNumberOfCalledMethods();
 
+        return sum;
+    }
     public static void main(String [] args) throws Exception
     {
         double time = System.nanoTime();
         //ClassFinder.setProjectPath("/home/rabbi/dl4j/soft_metrics");
         //File myFile = new File("/home/rabbi/dl4j/soft_metrics/src/main/java/support/ClassManager.java");
 
-        ClassFinder.setProjectPath("/home/rabbi/bin/samples/hablu");
+        ClassFinder.setProjectPath("/home/rabbi/Downloads/metric-dataset/proguard6.0.3");
 
         System.out.println((System.nanoTime()-time)/1000000);
 
-        File myFile = new File("/home/rabbi/bin/samples/hablu/Haha.java");
+        File myFile = new File("/home/rabbi/Downloads/metric-dataset/proguard6.0.3/core/src/proguard/ProGuard.java");
 
         CompilationUnit unit = JavaParser.parse(myFile);
         ClassManager manager = new ClassManager(myFile.getParent(),unit);
@@ -124,5 +131,7 @@ public class ClassManager {
         manager.generateCohesionGraph();
 
         System.out.println((System.nanoTime()-time)/1000000);
+
+        System.out.println(manager.responseOfClass());
     }
 }

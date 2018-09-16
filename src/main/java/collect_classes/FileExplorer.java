@@ -17,13 +17,13 @@ public class FileExplorer
 {
     Map <String, ArrayList<String>> packageMap;
     Map <String, ArrayList<String>> sourceMap;
-    ArrayList<CompilationUnit> CUList;
+    Map<String, ArrayList<CompilationUnit>> CUMap;
 
     public FileExplorer(File rootFile)
     {
         packageMap = new TreeMap<>();
         sourceMap = new TreeMap<>();
-        CUList = new ArrayList<>();
+        CUMap = new TreeMap<>();
 
         browseClasses(rootFile);
     }
@@ -48,7 +48,9 @@ public class FileExplorer
                         if(n.getPackageDeclaration().isPresent())
                         {
                             packName=n.getPackageDeclaration().get().getNameAsString();
-                            CUList.add(n);
+                            if(!CUMap.containsKey(src))
+                                CUMap.put(src, new ArrayList<>());
+                            CUMap.get(src).add(n);
                             includeToPackageMap(n);
                         }
                         if(!sourceMap.containsKey(src))
@@ -97,9 +99,9 @@ public class FileExplorer
             return sourceMap.get(path);
         return null;
     }
-    public ArrayList<CompilationUnit>getCUList()
+    public Map<String, ArrayList<CompilationUnit>>getCUMap()
     {
-        return CUList;
+        return CUMap;
     }
     /*
     public static void main(String[] args) {

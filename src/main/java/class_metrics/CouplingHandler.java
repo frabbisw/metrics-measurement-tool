@@ -9,12 +9,14 @@ public class CouplingHandler {
     String myMethodName;
     String myClassName;
     Map<String, Set<String>> couplingMap;
+    Set<String>calledMethods;
 
     public CouplingHandler(String myMethodName, String myClassName)
     {
         this.myMethodName=myMethodName;
         this.myClassName=myClassName;
 
+        calledMethods=new HashSet<>();
         couplingMap=new TreeMap<>();
     }
     public void addCalledMethod(String className, String methodName)
@@ -22,9 +24,15 @@ public class CouplingHandler {
         if(!couplingMap.containsKey(className))
             couplingMap.put(className, new HashSet<>());
         couplingMap.get(className).add(methodName);
+
+        calledMethods.add(className+"::"+methodName);
     }
     public int getNumberOfCalledMethods()
     {
-        return couplingMap.size();
+        return calledMethods.size();
+    }
+
+    public Set<String> getCalledMethods() {
+        return calledMethods;
     }
 }

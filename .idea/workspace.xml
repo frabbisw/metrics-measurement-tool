@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25d0a89d-4bd1-49de-9857-5f35d14ff9e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/class_metrics/CallGraphMetrics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/support/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/calc_loc/LineCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/calc_loc/LineCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/class_metrics/CohesionGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/class_metrics/CohesionGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/class_metrics/CohesionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/class_metrics/CohesionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/class_metrics/CouplingHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/class_metrics/CouplingHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/collect_classes/FileExplorer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/collect_classes/FileExplorer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/collect_classes/FileExplorer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/collect_classes/FileExplorer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/support/ClassManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/ClassManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/support/MethodManager$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/MethodManager$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/support/MethodManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/MethodManager$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/support/MethodManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/MethodManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/class_metrics/CohesionGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/class_metrics/CohesionGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/class_metrics/CouplingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/class_metrics/CouplingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/collect_classes/FileExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/collect_classes/FileExplorer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/support/ClassManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/ClassManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/support/MethodManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/MethodManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -37,38 +37,30 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/support/MethodManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
-              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/support/ClassManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="270">
+              <caret line="146" column="45" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5333#5334#0" expanded="true" />
+                <element signature="e#5370#5371#0" expanded="true" />
+                <element signature="e#5438#5439#0" expanded="true" />
+                <element signature="e#5471#5472#0" expanded="true" />
+                <element signature="e#5536#5537#0" expanded="true" />
+                <element signature="e#5570#5571#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CohesionGraph.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CallGraphMetrics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="50" column="39" lean-forward="true" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1568#1569#0" expanded="true" />
-                <element signature="e#1594#1595#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="54">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -76,13 +68,60 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CouplingHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+            <state relative-caret-position="274">
+              <caret line="34" column="43" lean-forward="true" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#725#726#0" expanded="true" />
-                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#972#973#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/support/ClassManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4378#4379#0" expanded="true" />
+                <element signature="e#4415#4416#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/support/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/FileExplorer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3669#3670#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/DirExplorer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -113,8 +152,6 @@
       <find>cohesionHandler</find>
       <find>myPa</find>
       <find>localCla</find>
-      <find>globalSet</find>
-      <find>cohesionHandler.add</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,23 +170,23 @@
         <option value="$PROJECT_DIR$/src/main/java/pack_from_imports/ClassExplorer.java" />
         <option value="$PROJECT_DIR$/src/main/java/collect_classes/CUCollector.java" />
         <option value="$PROJECT_DIR$/src/main/java/calc_coh_coup/Printer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/calc_loc/LineCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/calc_coh_coup/MethodManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/calc_coh_coup/ClassManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/collect_classes/ClassExplorer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/collect_classes/FileExplorer.java" />
         <option value="$PROJECT_DIR$/src/main/java/support/readme.txt" />
         <option value="$PROJECT_DIR$/src/main/java/collect_classes/ClassFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/support/Printer.java" />
         <option value="$PROJECT_DIR$/src/main/java/class_metrics/cohesionGraphAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/class_metrics/CohesionGraphAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/class_metrics/CohesionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/support/MethodManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/calc_loc/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/calc_loc/LineCounter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/class_metrics/CouplingHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/class_metrics/ResponseClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/class_metrics/CohesionGraph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/class_metrics/CallGraphMetrics.java" />
+        <option value="$PROJECT_DIR$/src/main/java/class_metrics/CouplingHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/collect_classes/FileExplorer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/support/MethodManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/support/ClassManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/support/Test.java" />
       </list>
     </option>
   </component>
@@ -165,33 +202,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
               <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
+              <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
+            </path>
+            <path>
+              <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
+              <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
               <item name="soft.metrics_main" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
               <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
+              <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
               <item name="soft.metrics_main" type="616d4139:PackageViewModuleNode" />
-              <item name="class_metrics" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
-              <item name="soft.metrics_main" type="616d4139:PackageViewModuleNode" />
-              <item name="support" type="1f31426a:PackageElementNode" />
+              <item name="collect_classes" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537097317487" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537125473240" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -220,8 +258,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClassManager">
-    <configuration name="ClassExplorer" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="ClassExplorer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hudai.ClassExplorer" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -247,7 +285,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassManager" type="Application" factoryName="Application" temporary="true">
+    <configuration name="ClassManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="support.ClassManager" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -260,7 +298,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileExplorer" type="Application" factoryName="Application" temporary="true">
+    <configuration name="FileExplorer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="collect_classes.FileExplorer" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -273,12 +311,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="calc_loc.Test" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="support.Test" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="calc_loc.*" />
+          <option name="PATTERN" value="support.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -294,8 +332,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClassManager" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.ClassManager" />
         <item itemvalue="Application.FileExplorer" />
         <item itemvalue="Application.ClassExplorer" />
         <item itemvalue="Application.ClassExplorer" />
@@ -320,36 +358,29 @@
       <option name="project" value="LOCAL" />
       <updated>1536641996789</updated>
     </task>
-    <task id="LOCAL-00002" summary="refactor">
-      <created>1537092867612</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1537092867612</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.57289004" visible="true" weight="0.21548285" />
-      <window_info id="Structure" order="1" sideWeight="0.42711" side_tool="true" visible="true" weight="0.21548285" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4830097" visible="true" weight="0.21832669" />
+      <window_info id="Structure" order="1" sideWeight="0.5169903" side_tool="true" visible="true" weight="0.21832669" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32847896" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.335034" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3279483" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33441034" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39967638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3282313" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3279483" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32850242" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -396,10 +427,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/hudai/ClassExplorer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/calc_coh_coup.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/CUCollector.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/DirExplorer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/LineCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="321">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
@@ -410,13 +441,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/FileExplorer.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javaparser/javaparser-core/3.6.20/15853c687bc19c37388c819104185cebd8e786bb/javaparser-core-3.6.20-sources.jar!/com/github/javaparser/ast/visitor/VoidVisitorAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="66" column="76" lean-forward="true" selection-start-line="66" selection-start-column="76" selection-end-line="66" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-588">
+          <caret line="44" column="61" lean-forward="true" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -452,26 +480,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/ClassFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/support/Printer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="328">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -481,8 +492,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CohesionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+        <state relative-caret-position="328">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#474#475#0" expanded="true" />
@@ -493,67 +504,33 @@
             <element signature="e#660#661#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
             <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javaparser/javaparser-core/3.6.20/15853c687bc19c37388c819104185cebd8e786bb/javaparser-core-3.6.20-sources.jar!/com/github/javaparser/ast/visitor/VoidVisitorAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="90">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/ClassFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="126">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/LineCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1042#1043#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1113#1114#0" expanded="true" />
-            <element signature="e#2865#2866#0" expanded="true" />
-            <element signature="e#2905#2906#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CouplingHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/MethodManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CohesionGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="50" column="39" lean-forward="true" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+        <state relative-caret-position="252">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1568#1569#0" expanded="true" />
@@ -562,17 +539,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/ResponseClass.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CouplingHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="274">
+          <caret line="34" column="43" lean-forward="true" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CallGraphMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/DirExplorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/FileExplorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3669#3670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/MethodManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="146" column="45" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5333#5334#0" expanded="true" />
+            <element signature="e#5370#5371#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#5471#5472#0" expanded="true" />
+            <element signature="e#5536#5537#0" expanded="true" />
+            <element signature="e#5570#5571#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/support/ClassManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="18">
+          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4378#4379#0" expanded="true" />
+            <element signature="e#4415#4416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

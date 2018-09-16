@@ -18,19 +18,19 @@ public class MethodManager {
     Map<String, String> globalMap;
     Set<String>localVariables;
     String myClassName;
-    String methodName="";
+    String myMethodName ="";
 
     public MethodManager(MethodDeclaration method, String myClassName, Map<String, String> globalMap, Map<String,String>classesMap, Set<String>globalSet)
     {
         this.globalMap=globalMap;
         this.classesMap=classesMap;
-        this.methodName=method.getNameAsString();
+        this.myMethodName =method.getNameAsString();
         this.myClassName=myClassName;
         this.localVariables=new HashSet<>();
 
         localMap = new TreeMap<>();
-        couplingHandler=new CouplingHandler(methodName, myClassName);
-        cohesionHandler=new CohesionHandler(methodName, myClassName);
+        couplingHandler=new CouplingHandler(myMethodName, myClassName);
+        cohesionHandler=new CohesionHandler(myMethodName, myClassName);
 
         for (Parameter parameter : method.getParameters())
             for(String flazz : classesMap.keySet())
@@ -130,9 +130,21 @@ public class MethodManager {
     public CohesionHandler getCohesionHandler() {
         return cohesionHandler;
     }
-
     public CouplingHandler getCouplingHandler() {
         return couplingHandler;
+    }
+    public Set<String> getCalledMethodsSet()
+    {
+        return couplingHandler.getCalledMethods();
+    }
+    public String getFullName()
+    {
+        return myClassName+"::"+myMethodName;
+    }
+
+    @Override
+    public String toString() {
+        return myClassName+"::"+myMethodName;
     }
 
     public void printCohesion()
@@ -141,6 +153,6 @@ public class MethodManager {
     }
     public void printCoupling()
     {
-        //Printer.printCouplingFromMethod(methodName, myClassName, couplingMap);
+        //Printer.printCouplingFromMethod(myMethodName, myClassName, couplingMap);
     }
 }

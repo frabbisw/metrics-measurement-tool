@@ -47,7 +47,10 @@ public class ClassManager {
         }
 
         for(TypeDeclaration type : compilationUnit.getTypes())
-            localClasses.add(compilationUnit.getClassByName(type.getNameAsString()).get());
+        {
+            if(compilationUnit.getClassByName(type.getNameAsString()).isPresent())
+                localClasses.add(compilationUnit.getClassByName(type.getNameAsString()).get());
+        }
     }
     public void prepareFields()
     {
@@ -100,7 +103,7 @@ public class ClassManager {
         //System.out.println("\n\n");
 
         cohesionGraph.calculateDSU();
-        System.out.println(cohesionGraph.getDsu());
+        //System.out.println(cohesionGraph.getDsu());
     }
     public int responseOfClass()
     {
@@ -110,28 +113,8 @@ public class ClassManager {
 
         return sum;
     }
-    public static void main(String [] args) throws Exception
-    {
-        double time = System.nanoTime();
-        //ClassFinder.setProjectPath("/home/rabbi/dl4j/soft_metrics");
-        //File myFile = new File("/home/rabbi/dl4j/soft_metrics/src/main/java/support/ClassManager.java");
 
-        ClassFinder.setProjectPath("/home/rabbi/Downloads/metric-dataset/proguard6.0.3");
-
-        System.out.println((System.nanoTime()-time)/1000000);
-
-        File myFile = new File("/home/rabbi/Downloads/metric-dataset/proguard6.0.3/core/src/proguard/ProGuard.java");
-
-        CompilationUnit unit = JavaParser.parse(myFile);
-        ClassManager manager = new ClassManager(myFile.getParent(),unit);
-
-        System.out.println((System.nanoTime()-time)/1000000);
-
-        manager.prepareFields();
-        manager.generateCohesionGraph();
-
-        System.out.println((System.nanoTime()-time)/1000000);
-
-        System.out.println(manager.responseOfClass());
+    public ArrayList<MethodManager> getMethodManagers() {
+        return methodManagers;
     }
 }

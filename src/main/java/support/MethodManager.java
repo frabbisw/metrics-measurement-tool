@@ -1,5 +1,8 @@
 package support;
 
+import class_metrics.CohesionHandler;
+import class_metrics.CouplingHandler;
+import com.github.javaparser.ast.AccessSpecifier;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.ForeachStmt;
@@ -9,23 +12,24 @@ import java.util.*;
 
 public class MethodManager {
     Map<String, String> localMap;
-    Map<String, Set<String>>couplingMap;
-    Set<String>cohessionList;
+    //Map<String, Set<String>>couplingMap;
+    CohesionHandler cohesionHandler;
+    CouplingHandler couplingHandler;
     Map<String,String>classesMap;
     Map<String, String> globalMap;
     String myClassName;
     String methodName="";
 
-    public MethodManager(MethodDeclaration method, String myClassName, Map<String, String> globalMap, Map<String,String>classesMap)
+    public MethodManager(MethodDeclaration method, String myClassName, Map<String, String> globalMap, Map<String,String>classesMap, Set<String>globalSet)
     {
-        localMap = new TreeMap<>();
-        couplingMap = new TreeMap<>();
-        cohessionList = new HashSet<>();
-
         this.globalMap=globalMap;
         this.classesMap=classesMap;
         this.methodName=method.getNameAsString();
         this.myClassName=myClassName;
+
+        localMap = new TreeMap<>();
+        couplingHandler=new CouplingHandler(methodName, myClassName);
+        cohesionHandler=new CohesionHandler(methodName, myClassName);
 
         for (Parameter parameter : method.getParameters())
             for(String flazz : classesMap.keySet())
@@ -41,6 +45,8 @@ public class MethodManager {
             @Override
             public void visit(ForeachStmt forEach , Void arg)
             {
+                if(globalSet.contains(forEach.getIterable().toString()))
+                    cohesionHandler.addVariable(forEach.getIterable().toString());
                 forEach.accept(new VoidVisitorAdapter<Void>() {
                     @Override
                     public void visit(VariableDeclarator variable, Void arg) {
@@ -59,6 +65,8 @@ public class MethodManager {
 
             @Override
             public void visit(AssignExpr expr, Void arg) {
+                if(globalSet.contains(expr.getTarget().toString()))
+                    cohesionHandler.addVariable(expr.getTarget().toString());
                 if(expr.isObjectCreationExpr())
                     addConstructorAsMethodCall(expr.asObjectCreationExpr());
                 super.visit(expr, arg);
@@ -73,9 +81,7 @@ public class MethodManager {
             String fullClassName=classesMap.get(className);
             String methodName=className;
 
-            if(!couplingMap.containsKey(fullClassName))
-                couplingMap.put(fullClassName, new HashSet<>());
-            couplingMap.get(fullClassName).add(methodName);
+            couplingHandler.addCalledMethod(fullClassName, methodName);
         }
     }
 
@@ -99,13 +105,12 @@ public class MethodManager {
             {
                 String fullClassName=classesMap.get(className);
                 String methodName=methodCall.getNameAsString();
-                if(!couplingMap.containsKey(fullClassName))
-                    couplingMap.put(fullClassName, new HashSet<>());
-                couplingMap.get(fullClassName).add(methodName);
+
+                couplingHandler.addCalledMethod(fullClassName, methodName);
             }
         }
         else
-            cohessionList.add(methodCall.getNameAsString());
+            cohesionHandler.addCalledMethod(methodCall.getNameAsString());
     }
     private void addVariableToLocalMap(VariableDeclarator variable)
     {
@@ -119,12 +124,21 @@ public class MethodManager {
         if(!isAForeignClass)
             localMap.put(variable.getNameAsString(), null);
     }
+
+    public CohesionHandler getCohesionHandler() {
+        return cohesionHandler;
+    }
+
+    public CouplingHandler getCouplingHandler() {
+        return couplingHandler;
+    }
+
     public void printCohesion()
     {
-        //Printer.printCohesionFromMethod(methodName, myClassName, cohessionList);
+        Printer.printCohesionFromMethod(cohesionHandler);
     }
     public void printCoupling()
     {
-        Printer.printCouplingFromMethod(methodName, myClassName, couplingMap);
+        //Printer.printCouplingFromMethod(methodName, myClassName, couplingMap);
     }
 }

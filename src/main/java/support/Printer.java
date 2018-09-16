@@ -1,5 +1,6 @@
 package support;
 
+import class_metrics.CohesionHandler;
 import com.google.common.base.Strings;
 
 import java.util.ArrayList;
@@ -22,14 +23,18 @@ public class Printer {
             System.out.println();
         }
     }
-    public static void printCohesionFromMethod(String methodName, String className, ArrayList<String>cohessinList)
+    public static void printCohesionFromMethod(CohesionHandler cohesionHandler)
     {
-        System.out.print(Strings.repeat("=", methodName.length())+"\n");
-        System.out.println(className+" "+methodName);
-        System.out.println(Strings.repeat("=", methodName.length()));
+        System.out.print(Strings.repeat("=", cohesionHandler.getMethodName().length())+"\n");
+        System.out.println(cohesionHandler.getClassName()+" "+cohesionHandler.getMethodName());
+        System.out.println(Strings.repeat("=", cohesionHandler.getMethodName().length()));
 
         System.out.print("Dependent Methods inside class: ");
-        for (String mn : cohessinList)
+        for (String mn : cohesionHandler.getCalledMethods())
+            System.out.print(mn+" ");
+        System.out.println();
+        System.out.print("Global variables: ");
+        for (String mn : cohesionHandler.getGlobalVariables())
             System.out.print(mn+" ");
         System.out.println();
     }

@@ -23,5 +23,8 @@ public class CouplingHandler {
             couplingMap.put(className, new HashSet<>());
         couplingMap.get(className).add(methodName);
     }
-
+    public int getNumberOfCalledMethods()
+    {
+        return couplingMap.size();
+    }
 }

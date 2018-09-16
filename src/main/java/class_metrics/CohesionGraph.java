@@ -36,14 +36,20 @@ public class CohesionGraph {
     }
     private void dfs(String node)
     {
+        if(node==null)  return;
         visited.add(node);
 
-        for(String child : cohesionMap.get(node))
-        {
-            if(!visited.contains(child))
+        try {
+            for(String child : cohesionMap.get(node))
             {
-                dfs(child);
+                if(!visited.contains(child))
+                {
+                    dfs(child);
+                }
             }
+        }
+        catch (NullPointerException e){
+            //System.out.println("Null Pointer Exception");
         }
     }
     public void calculateDSU()

@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25d0a89d-4bd1-49de-9857-5f35d14ff9e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/method_metrics/CyclomaticComplexityCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/method_metrics/WeightedMethodCountCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/support/CUManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/calc_loc/LineCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/calc_loc/LineCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/support/ClassManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/ClassManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/calc_loc/LineCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/calc_loc/LineCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/calc_loc/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/class_metrics/CallGraphMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/class_metrics/CallGraphMetrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/support/ClassManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/ClassManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/calc_loc/LineTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/support/MetricsTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/MetricsTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/support/TestTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/TestTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/collect_classes/tmp.text" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/support/MetricsTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/MetricsTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/support/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/TestTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/support/TestTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/TestTool.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -40,70 +35,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/support/MetricsTool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="67" column="70" lean-forward="true" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/support/ClassManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3021#3022#0" expanded="true" />
-                <element signature="e#3061#3062#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/method_metrics/CyclomaticComplexityCalculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-              <folding>
-                <element signature="e#2536#2537#0" expanded="true" />
-                <element signature="e#2594#2595#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/method_metrics/WeightedMethodCountCalculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/support/TestTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+            <state relative-caret-position="126">
+              <caret line="7" column="117" lean-forward="true" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -187,12 +122,12 @@
         <option value="$PROJECT_DIR$/src/main/java/support/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/calc_loc/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/support/TestTool.java" />
         <option value="$PROJECT_DIR$/src/main/java/calc_loc/calc_loc/LineCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/method_metrics/CyclomaticComplexityCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/method_metrics/WeightedMethodCountCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/support/ClassManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/support/MetricsTool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/support/TestTool.java" />
       </list>
     </option>
   </component>
@@ -225,13 +160,7 @@
               <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
               <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
               <item name="soft.metrics_main" type="616d4139:PackageViewModuleNode" />
-              <item name="method_metrics" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
-              <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
-              <item name="soft.metrics_main" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+              <item name="support" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -241,7 +170,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537727079854" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537728635008" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -407,7 +336,7 @@
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47826087" visible="true" weight="0.23505977" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47826087" visible="true" weight="0.23505977" />
       <window_info id="Structure" order="1" sideWeight="0.5217391" side_tool="true" visible="true" weight="0.23505977" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -416,7 +345,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3279483" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29402262" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29402262" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39967638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -489,24 +418,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/tmp.text">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/26.0-jre/2e35b51c759ae1a6edbb967b65c525105536d382/guava-26.0-jre-sources.jar!/com/google/common/hash/HashCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -552,16 +467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="56" lean-forward="true" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/Printer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,20 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/TestTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/calc_loc/LineTest.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -709,13 +600,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/MetricsTool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="67" column="70" lean-forward="true" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
+        <state relative-caret-position="252">
+          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/tmp.text">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/Printer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/MetricsTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/TestTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="117" lean-forward="true" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
         </state>
       </provider>
     </entry>

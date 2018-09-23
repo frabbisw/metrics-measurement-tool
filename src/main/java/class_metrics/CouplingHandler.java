@@ -25,7 +25,11 @@ public class CouplingHandler {
             couplingMap.put(className, new HashSet<>());
         couplingMap.get(className).add(methodName);
 
-        calledMethods.add(className+"::"+methodName);
+        calledMethods.add(generateFullName(className, methodName));
+    }
+    private String generateFullName(String className, String methodName)
+    {
+        return className+"::"+methodName;
     }
     public int getNumberOfCalledMethods()
     {
@@ -34,5 +38,17 @@ public class CouplingHandler {
 
     public Set<String> getCalledMethods() {
         return calledMethods;
+    }
+    public String getClassName()
+    {
+        return myClassName;
+    }
+    public String getFullName()
+    {
+        return myClassName+"::"+myMethodName;
+    }
+    public Set<String> getUsedClasses()
+    {
+        return couplingMap.keySet();
     }
 }

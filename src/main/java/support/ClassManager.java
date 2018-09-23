@@ -19,6 +19,7 @@ public class ClassManager {
     String myPackageName="Not Declared";
 
     public ClassManager(String ParentPath, CompilationUnit compilationUnit) {
+
         FileExplorer fileExplorer = ClassFinder.getClassExplorer();
         classesMap = new TreeMap<>();
         localClasses=new ArrayList<>();
@@ -35,7 +36,7 @@ public class ClassManager {
             {
                 for(String className : fileExplorer.getClassNamesByImportTag(importName))
                 {
-                    if(immport.toString().contains("*"))    classesMap.put(className, importName+"."+className);
+                    if(immport.toString().contains("*"))    classesMap.put(className, getFullName(importName, className));
                     else classesMap.put(className, importName);
                 }
             }
@@ -43,20 +44,21 @@ public class ClassManager {
         if(fileExplorer.getClassNamesBySource(ParentPath)!=null)
         {
             for(String className : fileExplorer.getClassNamesBySource(ParentPath))
-                classesMap.put(className, myPackageName+"."+className);
+                classesMap.put(className, getFullName(myPackageName, className));
         }
 
         for(TypeDeclaration type : compilationUnit.getTypes())
         {
             if(compilationUnit.getClassByName(type.getNameAsString()).isPresent())
-                localClasses.add(compilationUnit.getClassByName(type.getNameAsString()).get());
+                //localClasses.add(compilationUnit.getClassByName(type.getNameAsString()).get());
+                localClasses.add(type.asClassOrInterfaceDeclaration());
         }
     }
     public void prepareFields()
     {
         for(ClassOrInterfaceDeclaration clazz : localClasses)
         {
-            String classNameWithPackage=myPackageName+"."+clazz.getNameAsString();
+            String classNameWithPackage=getFullName(myPackageName, clazz.getNameAsString());
             Map<String, String>globalMap = new TreeMap<>();
 
             for (FieldDeclaration field : clazz.getFields())
@@ -90,7 +92,7 @@ public class ClassManager {
             md.setParameters(cd.getParameters());
             md.setBody(cd.getBody());
 
-            methodManagers.add(new MethodManager(md, myPackageName+"."+cd.getNameAsString(), globalMap, classesMap, globalSet));
+            methodManagers.add(new MethodManager(md, getFullName(myPackageName,cd.getNameAsString()), globalMap, classesMap, globalSet));
         }
     }
     public void generateCohesionGraph()
@@ -116,5 +118,9 @@ public class ClassManager {
 
     public ArrayList<MethodManager> getMethodManagers() {
         return methodManagers;
+    }
+    private String getFullName(String packageName, String className)
+    {
+        return packageName+"."+className;
     }
 }

@@ -1,6 +1,7 @@
 package calc_loc;
 
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.comments.Comment;
 import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.*;
@@ -16,16 +17,16 @@ public class LineCounter {
     int lineOfCodes;
     int numberOfStatements;
 
-    public LineCounter(CompilationUnit cu)
+    public LineCounter(ClassOrInterfaceDeclaration clazz)
     {
         numberOfStatements=0;
         lineOfComments=0;
         numberOfComments=0;
 
-        lineOfCodes = cu.getRange().get().end.line-cu.getRange().get().begin.line+1;
+        lineOfCodes = clazz.getRange().get().end.line-clazz.getRange().get().begin.line+1;
         Map<Integer, Integer>commentMap=new TreeMap<>();
 
-        List<Comment> comments=cu.getAllContainedComments();
+        List<Comment> comments=clazz.getAllContainedComments();
         for(Comment comment : comments)
             commentMap.put(comment.getRange().get().begin.line, comment.getRange().get().end.line);
 
@@ -35,11 +36,11 @@ public class LineCounter {
             lineOfComments+=commentMap.get(i)-i+1;
         }
 
-        countStatements(cu);
+        countStatements(clazz);
     }
 
-    private void countStatements(CompilationUnit cu) {
-        cu.accept(new VoidVisitorAdapter<Void>() {
+    private void countStatements(ClassOrInterfaceDeclaration clazz) {
+        clazz.accept(new VoidVisitorAdapter<Void>() {
             @Override
             public void visit(AssignExpr n, Void arg) {
                 numberOfStatements++;

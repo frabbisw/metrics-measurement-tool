@@ -6,55 +6,67 @@ import collect_classes.FileExplorer;
 import com.github.javaparser.ast.CompilationUnit;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Set;
 
 public class MetricsTool {
     String projectPath;
-    ArrayList<ClassManager>classManagers;
+    ArrayList<ClassManager> classManagers;
     CallGraphMetrics callGraphMetrics;
 
-    public MetricsTool(String projectPath)
-    {
-        classManagers=new ArrayList<>();
-        callGraphMetrics=new CallGraphMetrics();
+    public MetricsTool(String projectPath) {
+        classManagers = new ArrayList<>();
+        callGraphMetrics = new CallGraphMetrics();
 
-        this.projectPath=projectPath;
+        this.projectPath = projectPath;
         ClassFinder.setProjectPath(projectPath);
         FileExplorer explorer = ClassFinder.getClassExplorer();
 
-        for(String key : explorer.getCUMap().keySet())
-        {
-            for(int i=0; i<explorer.getCUMap().get(key).size(); i++)
-            {
+        for (String key : explorer.getCUMap().keySet()) {
+            for (int i = 0; i < explorer.getCUMap().get(key).size(); i++) {
                 CompilationUnit cu = explorer.getCUMap().get(key).get(i);
-                ClassManager manager = new ClassManager(key, cu);
+                CUManager manager = new CUManager(key, cu);
 
-                manager.prepareFields();
-                manager.generateCohesionGraph();
-
-                classManagers.add(manager);
+                for (ClassManager classManager : manager.getLocalClasses()) {
+                    classManagers.add(classManager);
+                }
             }
         }
         generateCallGraph();
+        setCouplingValues();
     }
-    private void generateCallGraph()
-    {
-        for(ClassManager classManager: classManagers)
+
+    private void setCouplingValues() {
+        Map<String, Integer> couplingValues = callGraphMetrics.getCouplingValues();
+
+        for(ClassManager manager : classManagers)
         {
-            for(MethodManager methodManager: classManager.getMethodManagers())
-            {
-                callGraphMetrics.addCouplingHandler(methodManager.getCouplingHandler());
-            }
+            int value=couplingValues.get(manager.getMyFullName());
+            manager.setCoupling(value);
         }
-        callGraphMetrics.generateCouplingGraph();
+    }
+
+    private void generateCallGraph() {
+        for (ClassManager classManager : classManagers) {
+            for (MethodManager methodManager : classManager.getMethodManagers())
+                callGraphMetrics.addCouplingHandler(methodManager.getCouplingHandler());
+        }
+        callGraphMetrics.generateCouplingClass();
         callGraphMetrics.generateMethodCallGraph();
     }
-    public void printCoupling()
+
+    public void printAll()
     {
-        Set<String> coupleClasses = callGraphMetrics.getCoupleClasses();
-        for(String couple : coupleClasses)
+        for(ClassManager classManager : classManagers)
         {
-            System.out.println(couple);
+            System.out.println(classManager.getMyFullName());
+            System.out.println(classManager.getLineOfCodes());
+            System.out.println(classManager.getLineOfComments());
+            System.out.println(classManager.getCoupling());
+            System.out.println(classManager.getLackOfCohesion());
+            System.out.println(classManager.getResponseOfClass());
+            System.out.println(classManager.getWeightedMethodCount());
+            System.out.println();
         }
     }
 }

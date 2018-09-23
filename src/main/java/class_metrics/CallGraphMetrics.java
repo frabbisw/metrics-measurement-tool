@@ -4,47 +4,47 @@ import java.util.*;
 
 public class CallGraphMetrics {
     private ArrayList<CouplingHandler>couplingHandlers;
-    Map<String, Set<String>>classCallGraph;
+    Map<String, Set<String>> classCallMap;
+    Map<String, Integer> couplingValues;
     Set<String> coupleClasses;
     Map<String, Integer>methodHash;
     Integer [][] callGraph;
 
     public CallGraphMetrics()
     {
-        classCallGraph=new TreeMap<>();
+        classCallMap =new TreeMap<>();
         couplingHandlers=new ArrayList<>();
         coupleClasses=new HashSet<>();
         methodHash=new HashMap<>();
+        couplingValues=new TreeMap<>();
     }
     public void addCouplingHandler(CouplingHandler handler)
     {
         couplingHandlers.add(handler);
     }
-    public void generateCouplingGraph()
+    public void generateCouplingClass()
     {
         for(CouplingHandler handler : couplingHandlers)
         {
-            if(!classCallGraph.containsKey(handler.getClassName()))
+            if(!classCallMap.containsKey(handler.getClassName()))
             {
-                classCallGraph.put(handler.getClassName(), new HashSet<>());
+                classCallMap.put(handler.getClassName(), new HashSet<>());
             }
-            classCallGraph.get(handler.getClassName()).addAll(handler.getUsedClasses());
-        }
+            classCallMap.get(handler.getClassName()).addAll(handler.getUsedClasses());
 
-        for(String sourceClass : classCallGraph.keySet())
-        {
-            for(String targetClass : classCallGraph.get(sourceClass))
+            for(String calledClass : handler.getUsedClasses())
             {
-                if(sourceClass.compareTo(targetClass)<0)
-                    coupleClasses.add(sourceClass+"+"+targetClass);
-                else
-                    coupleClasses.add(targetClass+"+"+sourceClass);
+                if(!classCallMap.containsKey(calledClass))
+                {
+                    classCallMap.put(calledClass, new HashSet<>());
+                }
+                classCallMap.get(calledClass).add(handler.getFullName());
             }
         }
-    }
-    public Set<String> getCoupleClasses()
-    {
-        return coupleClasses;
+        for(String clazz : classCallMap.keySet())
+        {
+            couplingValues.put(clazz, classCallMap.get(clazz).size());
+        }
     }
     public void generateMethodCallGraph()
     {
@@ -59,7 +59,6 @@ public class CallGraphMetrics {
                     methodHash.put(methodName, counter++);
             }
         }
-        System.out.println("\n");
 
         callGraph=new Integer[counter+1][counter+1];
 
@@ -73,8 +72,8 @@ public class CallGraphMetrics {
             }
         }
     }
-    public int totalCoupling()
-    {
-        return coupleClasses.size();
+
+    public Map<String, Integer> getCouplingValues() {
+        return couplingValues;
     }
 }

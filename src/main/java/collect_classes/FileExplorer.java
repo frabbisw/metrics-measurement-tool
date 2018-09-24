@@ -2,8 +2,6 @@ package collect_classes;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.ast.ImportDeclaration;
-import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
@@ -103,21 +101,4 @@ public class FileExplorer
     {
         return CUMap;
     }
-    /*
-    public static void main(String[] args) {
-        File rootFile = new File("/home/rabbi/bin/samples/effective-java-examples-master");
-        FileExplorer explorer = new FileExplorer(rootFile);
-
-        Map <String, ArrayList<String>> packageMap = explorer.getPackageMap();
-        for(String key : packageMap.keySet())
-        {
-            System.out.println("package: "+key);
-            System.out.println("Classes: ");
-            for (String str : packageMap.get(key))
-            {
-                System.out.println(str);
-            }
-        }
-    }
-    */
 }

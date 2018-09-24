@@ -148,11 +148,11 @@ public class ClassManager {
     }
     public double getWeightedMethodCount() {
         int WeightedMethodCount = 0;
-        for (MethodDeclaration method : myClass.getMethods()) {
-            CyclomaticComplexityCalculator c = new CyclomaticComplexityCalculator(method);
-            int complexity = c.calculateComplexity();
-            WeightedMethodCount += complexity;
+        for(MethodManager methodManager : methodManagers)
+        {
+            WeightedMethodCount+=methodManager.getCmc();
         }
+
         return WeightedMethodCount;
     }
 

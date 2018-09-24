@@ -15,7 +15,6 @@ public class CyclomaticComplexityCalculator {
     private MethodDeclaration method;
 
     public CyclomaticComplexityCalculator(MethodDeclaration method) {
-        //System.out.println(" * " + method.getName());
         this.method=method;
     }
 
@@ -42,7 +41,6 @@ public class CyclomaticComplexityCalculator {
             String str=switchEntryStmt.toString();
             totalBreak+= (str.split("case(?s:.*)break")).length-1;
         }
-        //System.out.println(totalBreak);
         return totalBreak;
     }
 

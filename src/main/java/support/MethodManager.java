@@ -6,6 +6,7 @@ import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.ForeachStmt;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+import method_metrics.CyclomaticComplexityCalculator;
 
 import java.util.*;
 
@@ -19,6 +20,7 @@ public class MethodManager {
     Set<String>localVariables;
     String myClassName;
     String myMethodName ="";
+    double cmc;
 
     public MethodManager(MethodDeclaration method, String myClassName, Map<String, String> globalMap, Map<String,String>classesMap, Set<String>globalSet)
     {
@@ -74,6 +76,9 @@ public class MethodManager {
                 super.visit(expr, arg);
             }
         }, null);
+
+        CyclomaticComplexityCalculator calculator = new CyclomaticComplexityCalculator(method);
+        cmc=calculator.calculateComplexity();
     }
 
     private void addConstructorAsMethodCall(ObjectCreationExpr expr) {
@@ -154,5 +159,9 @@ public class MethodManager {
     public void printCoupling()
     {
         //Printer.printCouplingFromMethod(myMethodName, myClassName, couplingMap);
+    }
+
+    public double getCmc() {
+        return cmc;
     }
 }

@@ -61,6 +61,9 @@ public class CallGraphMetrics {
         }
 
         callGraph=new Integer[counter+1][counter+1];
+        for(int i=0; i<callGraph.length; i++)
+            for(int j=0; j<callGraph[i].length; j++)
+                callGraph[i][j]=0;
 
         for(CouplingHandler source : couplingHandlers)
         {
@@ -75,5 +78,13 @@ public class CallGraphMetrics {
 
     public Map<String, Integer> getCouplingValues() {
         return couplingValues;
+    }
+
+    public Map<String, Integer> getMethodHash() {
+        return methodHash;
+    }
+
+    public Integer[][] getCallGraph() {
+        return callGraph;
     }
 }

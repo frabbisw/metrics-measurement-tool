@@ -79,9 +79,56 @@ public class MetricsTool {
 
     public void printCSV()
     {
+        printForClass();
+        printCMCOfMethods();
+        //printCallGraphMetrics();
+    }
+
+    private void printCallGraphMetrics() {
+        Map<String, Integer>methodHash=callGraphMetrics.getMethodHash();
+        Integer [][] callGraph=callGraphMetrics.getCallGraph();
+
+        String res="";
+        for(int i=0; i<callGraph.length; i++)
+        {
+            for(int j=0; j<callGraph[i].length; j++)
+            {
+                res+=callGraph[i][j]+",";
+            }
+            res+="\n";
+        }
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"callGraphMatrix.csv"));
+            writer.write(res);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void printCMCOfMethods() {
+        String res = "";
+        for(ClassManager classManager : classManagers)
+        {
+            for(MethodManager methodManager : classManager.getMethodManagers())
+            {
+                res+=methodManager.getFullName()+","+methodManager.getCmc()+"\n";
+            }
+        }
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"methodCyclomatic.csv"));
+            writer.write(res);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void printForClass() {
         String res="";
         res+=("class Name with Package,");
-        res+=("Line Of Codes, ");
+        res+=("Number of statements, ");
         res+=("Line Of Comments, ");
         res+=("Coupling between other objects, ");
         res+=("Lack of cohesion, ");
@@ -94,7 +141,7 @@ public class MetricsTool {
         for(ClassManager classManager : classManagers)
         {
             res+=(classManager.getMyFullName()+",");
-            res+=(classManager.getLineOfCodes()+",");
+            res+=(classManager.getNumberOfStatements()+",");
             res+=(classManager.getLineOfComments()+",");
             res+=(classManager.getCoupling()+",");
             res+=(classManager.getLackOfCohesion()+",");
@@ -106,35 +153,11 @@ public class MetricsTool {
         }
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"classMetrics.csv"));
             writer.write(res);
             writer.close();
-            System.out.println(res);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-    public void printAll()
-    {
-        for(ClassManager classManager : classManagers)
-        {
-            System.out.print(classManager.getMyFullName()+",");
-            System.out.print(classManager.getLineOfCodes()+",");
-            System.out.print(classManager.getLineOfComments()+",");
-            System.out.print(classManager.getCoupling()+",");
-            System.out.print(classManager.getLackOfCohesion()+",");
-            System.out.print(classManager.getResponseOfClass()+",");
-            System.out.print(classManager.getWeightedMethodCount());
-            System.out.println();
-        }
-    }
-    public void test()
-    {
-        for(ClassManager classManager : classManagers)
-        {
-            ArrayList<String>parents=classManager.getParents();
-
-            System.out.println(parents);
         }
     }
 }

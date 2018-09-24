@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25d0a89d-4bd1-49de-9857-5f35d14ff9e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/classes/support/InheritenceHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/support/InheritenceHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/calc_loc/LineTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/support/ClassManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/ClassManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/support/MetricsTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/MetricsTool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/support/TestTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/support/TestTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/collect_classes/tmp.text" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/support/ClassManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/ClassManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/support/MetricsTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/MetricsTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/support/TestTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/support/TestTool.java" afterDir="false" />
     </list>
@@ -33,17 +36,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/support/TestTool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="117" lean-forward="true" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,9 +118,10 @@
         <option value="$PROJECT_DIR$/src/main/java/calc_loc/calc_loc/LineCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/method_metrics/CyclomaticComplexityCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/method_metrics/WeightedMethodCountCalculator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/support/ClassManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/support/MetricsTool.java" />
         <option value="$PROJECT_DIR$/src/main/java/support/TestTool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/support/MetricsTool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/support/ClassManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/support/InheritenceHandler.java" />
       </list>
     </option>
   </component>
@@ -143,34 +137,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
               <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
-              <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
-            </path>
-            <path>
-              <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
-              <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
               <item name="soft.metrics_main" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
               <item name="soft.metrics" type="58d84e3e:PackageViewProjectNode" />
-              <item name="soft.metrics" type="eaaa3913:PackageViewModuleGroupNode" />
               <item name="soft.metrics_main" type="616d4139:PackageViewModuleNode" />
-              <item name="support" type="1f31426a:PackageElementNode" />
+              <item name="method_metrics" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537728635008" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537765548234" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -201,8 +189,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="CUManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.TestTool">
+    <configuration name="CUManager" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="support.CUManager" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -215,7 +203,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassExplorer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ClassExplorer" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="hudai.ClassExplorer" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -241,7 +229,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileExplorer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="FileExplorer" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="collect_classes.FileExplorer" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -254,7 +242,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="LineTest" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="calc_loc.LineTest" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -267,7 +255,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTool" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="support.TestTool" />
       <module name="soft.metrics_main" />
       <extension name="coverage">
@@ -290,10 +278,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestTool" />
+        <item itemvalue="Application.ClassExplorer" />
         <item itemvalue="Application.LineTest" />
         <item itemvalue="Application.CUManager" />
         <item itemvalue="Application.FileExplorer" />
-        <item itemvalue="Application.ClassExplorer" />
       </list>
     </recent_temporary>
   </component>
@@ -333,11 +321,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47826087" visible="true" weight="0.23505977" />
-      <window_info id="Structure" order="1" sideWeight="0.5217391" side_tool="true" visible="true" weight="0.23505977" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47474748" visible="true" weight="0.24261771" />
+      <window_info id="Structure" order="1" sideWeight="0.5252525" side_tool="true" visible="true" weight="0.24261771" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -345,13 +332,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3279483" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29402262" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39967638" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.292517" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39965987" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3279483" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3265306" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32850242" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32956383" />
@@ -535,19 +522,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/CUManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2393#2394#0" expanded="true" />
-            <element signature="e#2441#2442#0" expanded="true" />
-            <element signature="e#2436#2437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/CUManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/class_metrics/CallGraphMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-549">
@@ -561,59 +536,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/calc_loc/LineTest.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/calc_loc/LineCounter.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/method_metrics/WeightedMethodCountCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/method_metrics/CyclomaticComplexityCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/support/ClassManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3021#3022#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/tmp.text">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/calc_loc/LineTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/calc_loc/LineCounter.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/method_metrics/WeightedMethodCountCalculator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/calc_loc/LineTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/collect_classes/tmp.text" />
     <entry file="file://$PROJECT_DIR$/src/main/java/support/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -631,20 +558,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/method_metrics/CyclomaticComplexityCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/InheritenceHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="35" column="58" lean-forward="true" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/support/MetricsTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1">
+          <caret line="80" column="5" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/support/TestTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="117" lean-forward="true" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
+        <state relative-caret-position="120">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/support/ClassManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2150">
+          <caret line="162" column="36" selection-start-line="162" selection-start-column="36" selection-end-line="162" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3263#3264#0" expanded="true" />
+            <element signature="e#3282#3283#0" expanded="true" />
+            <element signature="e#3411#3412#0" expanded="true" />
+            <element signature="e#3430#3431#0" expanded="true" />
+            <element signature="e#4143#4144#0" expanded="true" />
+            <element signature="e#4475#4476#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4665#4666#0" expanded="true" />
+            <element signature="e#4771#4772#0" expanded="true" />
+            <element signature="e#4836#4837#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5394#5395#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

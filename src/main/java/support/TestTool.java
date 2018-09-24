@@ -5,8 +5,9 @@ public class TestTool {
     {
         double time = System.nanoTime();
 
-        MetricsTool tool = new MetricsTool("/home/rabbi/dl4j/soft_metrics", "/home/rabbi/Desktop/metricsOutput.csv");
+        MetricsTool tool = new MetricsTool("/home/rabbi/Downloads/metric-dataset/proguard6.0.3", "/home/rabbi/Desktop/metricsOutput.csv");
         tool.printCSV();
+        //tool.test();
 
         System.out.println((System.nanoTime()-time)/1000000);
     }

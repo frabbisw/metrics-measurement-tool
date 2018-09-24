@@ -3,6 +3,7 @@ package support;
 import calc_loc.LineCounter;
 import class_metrics.CohesionGraph;
 import com.github.javaparser.ast.body.*;
+import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import method_metrics.CyclomaticComplexityCalculator;
 
 import java.util.*;
@@ -16,6 +17,8 @@ public class ClassManager {
     LineCounter lineCounter;
     double lackOfCohesion;
     double coupling;
+    double numberOfChildren;
+    double levelOfInheritence=0;
 
     public ClassManager(String myPackageName, ClassOrInterfaceDeclaration myClass, Map<String, String> classesMap) {
         this.myPackageName = myPackageName;
@@ -86,6 +89,33 @@ public class ClassManager {
     public void setCoupling(double coupling) {
         this.coupling = coupling;
     }
+    public void setNumberOfChildren(double children)
+    {
+        this.numberOfChildren=children;
+    }
+    public void setLevelOfInheritence(double levelOfInheritence)
+    {
+        this.levelOfInheritence=levelOfInheritence;
+    }
+
+    public ArrayList<String>getParents()
+    {
+        ArrayList<String>parents=new ArrayList<>();
+        for(ClassOrInterfaceType type : myClass.getExtendedTypes())
+        {
+            if(classesMap.containsKey(type.getNameAsString()))
+                parents.add(classesMap.get(type.getNameAsString()));
+        }
+
+        for(ClassOrInterfaceType type : myClass.getImplementedTypes())
+        {
+            if(classesMap.containsKey(type.getNameAsString()))
+                parents.add(classesMap.get(type.getNameAsString()));
+        }
+
+
+        return parents;
+    }
 
     //APIs...
     public double getLackOfCohesion()
@@ -116,14 +146,21 @@ public class ClassManager {
     public double getCoupling() {
         return coupling;
     }
-    public double getWeightedMethodCount()
-    {
-        int WeightedMethodCount=0;
+    public double getWeightedMethodCount() {
+        int WeightedMethodCount = 0;
         for (MethodDeclaration method : myClass.getMethods()) {
-            CyclomaticComplexityCalculator c=new CyclomaticComplexityCalculator(method);
-            int complexity=c.calculateComplexity();
-            WeightedMethodCount+=complexity;
+            CyclomaticComplexityCalculator c = new CyclomaticComplexityCalculator(method);
+            int complexity = c.calculateComplexity();
+            WeightedMethodCount += complexity;
         }
         return WeightedMethodCount;
+    }
+
+    public double getNumberOfChildren() {
+        return numberOfChildren;
+    }
+
+    public double getLevelOfInheritance() {
+        return levelOfInheritence;
     }
 }

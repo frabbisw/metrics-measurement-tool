@@ -14,6 +14,7 @@ public class MetricsTool {
     String outputPath;
     ArrayList<ClassManager> classManagers;
     CallGraphMetrics callGraphMetrics;
+    InheritenceHandler inheritenceHandler;
 
     public MetricsTool(String projectPath, String outputPath) {
         classManagers = new ArrayList<>();
@@ -35,8 +36,20 @@ public class MetricsTool {
                 }
             }
         }
+
         generateCallGraph();
         setCouplingValues();
+
+        inheritenceHandler=new InheritenceHandler(classManagers);
+        setInheritenceValues();
+    }
+
+    private void setInheritenceValues() {
+        for(ClassManager classManager : classManagers)
+        {
+            classManager.setNumberOfChildren(inheritenceHandler.getNumberOfChildren(classManager.getMyFullName()));
+            classManager.setLevelOfInheritence(inheritenceHandler.getLevelOfInheritence(classManager.getMyFullName()));
+        }
     }
 
     private void setCouplingValues() {
@@ -44,7 +57,13 @@ public class MetricsTool {
 
         for(ClassManager manager : classManagers)
         {
-            int value=couplingValues.get(manager.getMyFullName());
+            int value;
+            try{
+                value = couplingValues.get(manager.getMyFullName());
+            }
+            catch (Exception e){
+                value=0;
+            }
             manager.setCoupling(value);
         }
     }
@@ -61,6 +80,17 @@ public class MetricsTool {
     public void printCSV()
     {
         String res="";
+        res+=("class Name with Package,");
+        res+=("Line Of Codes, ");
+        res+=("Line Of Comments, ");
+        res+=("Coupling between other objects, ");
+        res+=("Lack of cohesion, ");
+        res+=("Response of class, ");
+        res+=("Weighted method count, ");
+        res+=("Number of children, ");
+        res+=("Level of inheritance, ");
+        res+="\n";
+
         for(ClassManager classManager : classManagers)
         {
             res+=(classManager.getMyFullName()+",");
@@ -69,7 +99,9 @@ public class MetricsTool {
             res+=(classManager.getCoupling()+",");
             res+=(classManager.getLackOfCohesion()+",");
             res+=(classManager.getResponseOfClass()+",");
-            res+=(classManager.getWeightedMethodCount());
+            res+=(classManager.getWeightedMethodCount()+",");
+            res+=(classManager.getNumberOfChildren())+",";
+            res+=(classManager.getLevelOfInheritance())+",";
             res+="\n";
         }
 
@@ -94,6 +126,15 @@ public class MetricsTool {
             System.out.print(classManager.getResponseOfClass()+",");
             System.out.print(classManager.getWeightedMethodCount());
             System.out.println();
+        }
+    }
+    public void test()
+    {
+        for(ClassManager classManager : classManagers)
+        {
+            ArrayList<String>parents=classManager.getParents();
+
+            System.out.println(parents);
         }
     }
 }

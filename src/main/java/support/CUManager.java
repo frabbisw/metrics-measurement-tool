@@ -50,7 +50,8 @@ public class CUManager {
         for(TypeDeclaration type : compilationUnit.getTypes())
         {
             if(compilationUnit.getClassByName(type.getNameAsString()).isPresent())
-                //localClasses.add(compilationUnit.getClassByName(type.getNameAsString()).get());
+                localClasses.add(new ClassManager(myPackageName, type.asClassOrInterfaceDeclaration(), classesMap));
+            if(compilationUnit.getInterfaceByName(type.getNameAsString()).isPresent())
                 localClasses.add(new ClassManager(myPackageName, type.asClassOrInterfaceDeclaration(), classesMap));
         }
     }

@@ -5,7 +5,7 @@ public class TestTool {
     {
         double time = System.nanoTime();
 
-        MetricsTool tool = new MetricsTool("/home/rabbi/Downloads/metric-dataset/proguard6.0.3", "/home/rabbi/Desktop/metricsOutput/");
+        MetricsTool tool = new MetricsTool("/home/rabbi/Downloads/proguard6.0.3", "/home/rabbi/bin/samples/hablu");
         tool.printCSV();
         //tool.test();
 

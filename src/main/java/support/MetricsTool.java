@@ -99,7 +99,7 @@ public class MetricsTool {
         }
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"callGraphMatrix.csv"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"/callGraphMatrix.csv"));
             writer.write(res);
             writer.close();
         } catch (IOException e) {
@@ -117,7 +117,7 @@ public class MetricsTool {
             }
         }
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"methodCyclomatic.csv"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"/methodCyclomatic.csv"));
             writer.write(res);
             writer.close();
         } catch (IOException e) {
@@ -153,7 +153,7 @@ public class MetricsTool {
         }
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"classMetrics.csv"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath+"/classMetrics.csv"));
             writer.write(res);
             writer.close();
         } catch (IOException e) {

@@ -72,12 +72,18 @@ public class FileExplorer
         {
             packageMap.get(packName).add(type.getNameAsString());
 
-            try {
+            if(n.getClassByName(type.getNameAsString()).isPresent())
+            {
                 String className=n.getClassByName(type.getNameAsString()).get().getNameAsString();
                 packageMap.put(packName+"."+className, new ArrayList<>());
                 packageMap.get(packName+"."+className).add(type.getNameAsString());
             }
-            catch (Exception e) {}
+            else if (n.getInterfaceByName(type.getNameAsString()).isPresent())
+            {
+                String className=n.getInterfaceByName(type.getNameAsString()).get().getNameAsString();
+                packageMap.put(packName+"."+className, new ArrayList<>());
+                packageMap.get(packName+"."+className).add(type.getNameAsString());
+            }
         }
     }
     private String getFullName(String packName, String className)

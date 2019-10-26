@@ -5,7 +5,12 @@ public class TestTool {
     {
         double time = System.nanoTime();
 
-        MetricsTool tool = new MetricsTool("/home/rabbi/Downloads/proguard6.0.3", "/home/rabbi/bin/samples/hablu");
+        MetricsTool tool = new MetricsTool("/home/rabbi/Desktop/re/sysmap/dataset/aes", "/home/rabbi/Desktop/re/sysmap/out/aes");
+//        MetricsTool tool = new MetricsTool("/home/rabbi/Desktop/re/sysmap/dataset/JDeodorant-master", "/home/rabbi/Desktop/re/sysmap/out/JDeodorant");
+//        MetricsTool tool = new MetricsTool("/home/rabbi/Desktop/re/sysmap/dataset/jaimlib", "/home/rabbi/Desktop/re/sysmap/out/jaimlib");
+//        MetricsTool tool = new MetricsTool("/home/rabbi/IdeaProjects/metrics-measurement-tool", "/home/rabbi/Desktop/re/sysmap/out/our-mm");
+//        MetricsTool tool = new MetricsTool("/home/rabbi/IdeaProjects/sysmap", "/home/rabbi/Desktop/re/sysmap/out/sysmap");
+
         tool.printCSV();
         //tool.test();
 
